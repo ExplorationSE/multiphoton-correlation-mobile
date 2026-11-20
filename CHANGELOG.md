@@ -19,6 +19,7 @@ Umbenennung, keine Funktionsänderung.
 - Service-Worker-Cache `harp-gx-mobil-1.4.0-r1`; Einstellungen im Browser bleiben erhalten. Wer die App auf dem
   Startbildschirm hat, kann sie entfernen und neu hinzufügen, damit der neue Name erscheint.
 - Daten-Zips: Inhalt unverändert, nur der Dateiname.
+- GitHub Actions: macOS-Wheel jetzt auf `macos-15` gebaut (`macos-14` wird von GitHub nicht mehr angeboten).
 
 ## 1.3.1 – 19.10.2026
 
