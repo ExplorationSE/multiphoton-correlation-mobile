@@ -506,7 +506,7 @@ snAPI-Histogramm ↔ eigenes Histogramm.
 
 ## 13. Lizenz
 
-MIT-Lizenz, siehe [`LICENSE`](LICENSE) – Copyright (c) 2026 ExplorationSE.
+MIT-Lizenz, siehe [`LICENSE`](LICENSE) – Copyright (c) 2026 Stefan Eilers.
 Enthaltene Fremdsoftware: uPlot (MIT, © Leon Sorokin), Lizenztext in `web/vendor/LICENSE-uPlot.txt`.
 Unabhängige Software, weder mit der PicoQuant GmbH verbunden noch von ihr unterstützt. PicoQuant, HydraHarp,
 MultiHarp, PicoHarp, TimeHarp, snAPI und SymPhoTime sind Marken ihrer jeweiligen Inhaber.
