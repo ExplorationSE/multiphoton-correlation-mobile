@@ -1,7 +1,7 @@
 {
-  "name": "ExplorationSE Harp GX Mobil",
-  "short_name": "Harp GX Mobil",
-  "description": "Live-Histogramme und g²/g³/g⁴ einer simulierten Harp aus PTU-Dateien – noch ohne Anbindung an eine echte Harp",
+  "name": "Multiphoton Correlation Mobile",
+  "short_name": "Multiphoton Correlation Mobile",
+  "description": "Live-Korrelationen g², g³, g⁴ aus T2-Zeitmarken – für PicoQuant HydraHarp 500, MultiHarp und PicoHarp 330. Simulation aus PTU-Dateien – noch ohne Anbindung an eine echte Harp. Unabhängige Software, nicht mit PicoQuant verbunden.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",

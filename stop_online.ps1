@@ -1,4 +1,4 @@
-﻿# ExplorationSE Harp GX Mobil - beendet Server und Cloudflare-Tunnel, die mit start_online gestartet wurden.
+﻿# Multiphoton Correlation Mobile - beendet Server und Cloudflare-Tunnel, die mit start_online gestartet wurden.
 param([int]$Port = 8765, [switch]$Quiet)
 $ErrorActionPreference = 'SilentlyContinue'
 $root = $PSScriptRoot
@@ -34,6 +34,6 @@ foreach ($f in @($pidFile, $srvPidFile, (Join-Path $logDir 'online_info.txt'))) 
     if (Test-Path -LiteralPath $f) { Remove-Item -LiteralPath $f -Force }
 }
 if (-not $Quiet) {
-    if ($n -gt 0) { Write-Host "Harp GX Mobil beendet ($n Prozess(e))." -ForegroundColor Cyan }
-    else { Write-Host 'Es lief kein Harp-Mobil-Online-Prozess.' -ForegroundColor Cyan }
+    if ($n -gt 0) { Write-Host "Multiphoton Correlation Mobile beendet ($n Prozess(e))." -ForegroundColor Cyan }
+    else { Write-Host 'Es lief kein Online-Prozess von Multiphoton Correlation Mobile.' -ForegroundColor Cyan }
 }

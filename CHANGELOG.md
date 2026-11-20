@@ -1,7 +1,24 @@
-# Änderungsprotokoll – ExplorationSE Harp GX Mobil
+# Änderungsprotokoll – Multiphoton Correlation Mobile
 
-> Bis Version 1.3.0 hieß das Projekt „ExSE Harp GX Mobil“ (Repository `ExplorationSE/exse-harp-gx-mobil`).
-> Die Einträge bis 1.3.0 behalten den damaligen Namen.
+> Bis Version 1.3.1 hieß das Projekt „ExplorationSE Harp GX Mobil“ (Repository `ExplorationSE/harp-gx-mobil`),
+> bis 1.3.0 „ExSE Harp GX Mobil“ (Repository `ExplorationSE/exse-harp-gx-mobil`). Die älteren Einträge behalten den
+> damaligen Namen.
+
+## 1.4.0 – 20.11.2026
+
+Umbenennung, keine Funktionsänderung.
+- Neuer Name **Multiphoton Correlation Mobile** mit dem Untertitel „Live-Korrelationen g², g³, g⁴ aus T2-Zeitmarken –
+  für PicoQuant HydraHarp 500, MultiHarp und PicoHarp 330“: Kopfzeile und Infobereich der App, Seitentitel, App-Manifest,
+  Anmeldeseite, `/api/health`, Server- und Skriptmeldungen, README, Anleitung und PDF, Paketbeschreibung des Rust-Kerns.
+- Unabhängigkeits- und Markenhinweis oben im README, auf der Titelseite der Anleitung und im Infobereich der App.
+- GitHub-Repository umbenannt in `ExplorationSE/multiphoton-correlation-mobile` (alte Adressen leiten weiter);
+  Download-Dateien heißen jetzt `multiphoton-correlation-mobile-…zip`. Programmordner im Zip (`harp-gx-mobil`),
+  Installationsordner `C:\HarpGXMobil\`, Python-Paket `harp`, Rust-Modul `harp_gx_core` und Umgebungsvariablen
+  `HARP_*` bleiben unverändert; bestehende Installationen funktionieren an ihrem Ort weiter.
+- Rust-Kern `harp_gx_core` 1.4.0: nur Paketbeschreibung und Version, Rechencode unverändert.
+- Service-Worker-Cache `harp-gx-mobil-1.4.0-r1`; Einstellungen im Browser bleiben erhalten. Wer die App auf dem
+  Startbildschirm hat, kann sie entfernen und neu hinzufügen, damit der neue Name erscheint.
+- Daten-Zips: Inhalt unverändert, nur der Dateiname.
 
 ## 1.3.1 – 19.10.2026
 

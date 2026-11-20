@@ -1,10 +1,15 @@
-# ExplorationSE Harp GX Mobil
+# Multiphoton Correlation Mobile
 
-[![Tests](https://github.com/ExplorationSE/harp-gx-mobil/actions/workflows/tests.yml/badge.svg)](https://github.com/ExplorationSE/harp-gx-mobil/actions/workflows/tests.yml)
+**Live-Korrelationen g², g³, g⁴ aus T2-Zeitmarken – für PicoQuant HydraHarp 500, MultiHarp und PicoHarp 330**
+
+> **Unabhängige Software:** weder mit der PicoQuant GmbH verbunden noch von ihr unterstützt oder geprüft.
+> PicoQuant, HydraHarp, MultiHarp, PicoHarp, TimeHarp, snAPI und SymPhoTime sind Marken ihrer jeweiligen Inhaber.
+
+[![Tests](https://github.com/ExplorationSE/multiphoton-correlation-mobile/actions/workflows/tests.yml/badge.svg)](https://github.com/ExplorationSE/multiphoton-correlation-mobile/actions/workflows/tests.yml)
 [![Lizenz: MIT](https://img.shields.io/badge/Lizenz-MIT-blue.svg)](LICENSE)
 
-Live-Histogramme, Korrelationen g²/g³/g⁴ und Zählraten für eine PicoQuant **Harp** (z. B. HydraHarp 500, MultiHarp,
-PicoHarp 330, TimeHarp 260) auf dem Smartphone – mit
+**Multiphoton Correlation Mobile** berechnet Korrelationen g²/g³/g⁴ live aus den T2-Zeitmarken einer PicoQuant **Harp**
+(z. B. HydraHarp 500, MultiHarp, PicoHarp 330, TimeHarp 260) und zeigt sie mit Histogrammen und Zählraten auf dem Smartphone – mit
 Steuerung im Browser (PWA); derzeit **Simulation aus PTU-Dateien, noch ohne Geräteanbindung**.
 
 > [!IMPORTANT]
@@ -18,11 +23,9 @@ Steuerung im Browser (PWA); derzeit **Simulation aus PTU-Dateien, noch ohne Ger�
 >   [PTU-Format-Demos](https://github.com/PicoQuant/PicoQuant-Time-Tagged-File-Format-Demos). Dieses Repository
 >   enthält **keine Dateien von PicoQuant** (keine DLLs, Header, Demo-Code oder snAPI-Wheels); die Demodaten sind
 >   synthetisch erzeugt.
-> - **Kein Produkt der PicoQuant GmbH**, nicht mit ihr verbunden und nicht von ihr unterstützt oder geprüft.
->   PicoQuant, HydraHarp, MultiHarp, PicoHarp, TimeHarp, snAPI und SymPhoTime sind Marken ihrer jeweiligen Inhaber.
 > - **Ohne Gewährleistung** (MIT-Lizenz); nicht für sicherheitskritische Anwendungen bestimmt.
 
-**Download:** [aktuelle Version (Programm, Demodaten, Anleitung als PDF)](https://github.com/ExplorationSE/harp-gx-mobil/releases/latest)
+**Download:** [aktuelle Version (Programm, Demodaten, Anleitung als PDF)](https://github.com/ExplorationSE/multiphoton-correlation-mobile/releases/latest)
 · Änderungen: [`CHANGELOG.md`](CHANGELOG.md) · Lizenz: [MIT](#13-lizenz)
 
 <p>
@@ -32,14 +35,14 @@ Steuerung im Browser (PWA); derzeit **Simulation aus PTU-Dateien, noch ohne Ger�
   <img src="docs/screenshot-gx-histo.png" alt="Histogramm-Ansicht mit Kanaltasten K1–K4" width="190">
 </p>
 
-## ExplorationSE Harp GX Mobil – Ziel und Stand
+## Ziel und Stand
 
-**ExplorationSE Harp GX Mobil** ist der Leistungszweig von [ExplorationSE Harp Mobil](https://github.com/ExplorationSE/harp-mobil)
-(Ausgangsbasis: Mobil 1.0.6, Commit `ffec0b3`; Mobil selbst bleibt unverändert). Ziel: Korrelationen höherer Ordnung
+**Multiphoton Correlation Mobile** ist der Leistungszweig von [TCSPC Live Mobile](https://github.com/ExplorationSE/tcspc-live-mobile)
+(vorher „Harp Mobil“; Ausgangsbasis: dessen Version 1.0.6, Commit `ffec0b3`; TCSPC Live Mobile selbst bleibt unverändert). Ziel: Korrelationen höherer Ordnung
 **g⁽²⁾, g⁽³⁾, g⁽⁴⁾** aus T2-Zeitmarken in Echtzeit, mit schnellem Rechenkern und Anzeige auf dem Handy.
 
-**Version 1.3.1 (dieser Stand):** Umbenennung von „ExSE Harp GX Mobil“ in **ExplorationSE Harp GX Mobil**, neue
-Repository-Adresse <https://github.com/ExplorationSE/harp-gx-mobil> (die alte Adresse leitet weiter); Funktionen wie 1.3.0:
+**Version 1.4.0 (dieser Stand):** Umbenennung in **Multiphoton Correlation Mobile** (vorher „Harp GX Mobil“), neue
+Repository-Adresse <https://github.com/ExplorationSE/multiphoton-correlation-mobile> (die alte Adresse leitet weiter); Funktionen wie 1.3.0:
 - Fünf Ansichten **Histo | Zeit | g² | g³ | g⁴** mit großer Kachel g²(0) / g³(0,0) / g⁴(0,0,0), Kachelliste aller
   Kanal-Kombinationen, Heralded g²ₕ (K0 als Herald) und grauen Hinweisen. Die g³/g⁴-Karten haben eine log. Farbskala.
 - Rechenkern `harp_gx_core` in Rust (CPU, rayon) mit GPU-Pfad (wgpu); Rückfall auf Numba bzw. NumPy, alle bitgleich.
@@ -92,7 +95,7 @@ Die g³/g⁴-Histogramme rechnet ein eigener GX-Prozess (`harp/gx`), damit die S
 Alle Kerne liefern bitgleiche Ergebnisse (Tests gegen `harp/gn.py`, alle 9 Demodateien).
 
 - **Rust-Kern `harp_gx_core`** (PyO3/rayon, `rust/harp_gx_core`, seit 1.1). Unter Windows liegt das fertige Wheel
-  `harp_gx_core-1.3.1-cp311-abi3-win_amd64.whl` im Programm-Zip unter `wheels\`; `install_windows.bat` installiert es.
+  `harp_gx_core-1.4.0-cp311-abi3-win_amd64.whl` im Programm-Zip unter `wheels\`; `install_windows.bat` installiert es.
   Ein Compiler ist nicht nötig. Ohne Wheel rechnet Numba.
 - **Server-Pfad im Rust-Kern** (seit 1.3, `src/stream.rs`): PTU-Dekodierung, T2-Start-Stopp-Histogramm,
   g²-Kreuzkorrelation und Zählraten je Frame in einem Durchlauf, bit-identisch zu den NumPy-Fassungen (Rückfall
@@ -176,7 +179,7 @@ die CPU – dort rechnet automatisch die CPU.
 
 Version: einzige Quelle `harp/__init__.py` (`__version__`), abrufbar über `/api/health`.
 
-Auch in Version 1.3.1 kommen die Daten **nicht von einer echten Harp**, sondern aus einer
+Auch in Version 1.4.0 kommen die Daten **nicht von einer echten Harp**, sondern aus einer
 **Messsimulation mit einer `.ptu`-Datei**, die in Echtzeit abgespielt wird.
 
 > Status: funktionsfähiger Prototyp. Die reine Python-Quelle ist vollständig getestet. Die snAPI-Quelle
@@ -302,7 +305,7 @@ Beim Start wird `default_file` geöffnet und (bei `autostart = true`) sofort abg
 2. IP-Adresse des Messrechners ermitteln: `ipconfig` → „IPv4-Adresse“, z. B. `192.168.1.50`.
 3. Windows-Firewall für den Port öffnen (Eingabeaufforderung **als Administrator**, nur Profil „Privat“):
    ```bat
-   netsh advfirewall firewall add rule name="Harp GX Mobil" dir=in action=allow protocol=TCP localport=8765 profile=private
+   netsh advfirewall firewall add rule name="Multiphoton Correlation Mobile" dir=in action=allow protocol=TCP localport=8765 profile=private
    ```
 4. Am Handy im Browser öffnen: `http://192.168.1.50:8765/` (mit Token: `http://192.168.1.50:8765/?token=IHR_TOKEN`).
 5. Optional „Zum Startbildschirm hinzufügen“. Hinweis: Der Service Worker (Offline-App-Hülle) wird von
@@ -456,7 +459,7 @@ Steuer-Sperre, WebSocket-Ablauf, Anmeldung (Login-Seite, `?token=`, Cookie, Fehl
 Tunnel-Situation (Host/Origin `abc.trycloudflare.com`, `X-Forwarded-Proto`, `CF-Connecting-IP`, fremde Origin); mit installiertem snAPI zusätzlich den Vergleich
 snAPI-Histogramm ↔ eigenes Histogramm.
 
-## 10. Bekannte Einschränkungen (1.3.1)
+## 10. Bekannte Einschränkungen (1.4.0)
 
 * Keine echte Harp; die Live-Quelle `hh500` ist ein Platzhalter.
 * snAPI-Quelle unter Windows ungetestet. Unter Linux (snAPI 1.2.5) beobachtet: Öffnen einer weiteren Datei im
@@ -505,5 +508,5 @@ snAPI-Histogramm ↔ eigenes Histogramm.
 
 MIT-Lizenz, siehe [`LICENSE`](LICENSE) – Copyright (c) 2026 ExplorationSE.
 Enthaltene Fremdsoftware: uPlot (MIT, © Leon Sorokin), Lizenztext in `web/vendor/LICENSE-uPlot.txt`.
-PicoQuant, HydraHarp, MultiHarp, PicoHarp, TimeHarp und snAPI sind Marken bzw. Software der PicoQuant GmbH;
-dieses Projekt ist davon unabhängig.
+Unabhängige Software, weder mit der PicoQuant GmbH verbunden noch von ihr unterstützt. PicoQuant, HydraHarp,
+MultiHarp, PicoHarp, TimeHarp, snAPI und SymPhoTime sind Marken ihrer jeweiligen Inhaber.

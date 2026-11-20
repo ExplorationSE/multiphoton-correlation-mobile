@@ -1,5 +1,5 @@
 @echo off
-rem ExplorationSE Harp GX Mobil - einmalige Installation (Windows 10/11, 64 Bit)
+rem Multiphoton Correlation Mobile - einmalige Installation (Windows 10/11, 64 Bit)
 setlocal EnableDelayedExpansion
 cd /d "%~dp0"
 set "PYEXE="
